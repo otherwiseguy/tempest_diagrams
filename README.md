@@ -1,6 +1,6 @@
 # Parse tempest logs and produce a sequence diagram
 
-Usage: python parse <filename> > out.html
+Usage: python parse.py <filename> > out.html
 
 This is currently extremely brittle. The file can't have partial records
 for example.
