@@ -53,15 +53,17 @@ class TempestRequest(object):
     def target(self):
         if self.url.port == 9696:
             return 'Neutron'
-        elif self.url.path.startswith('/compute'):
+        elif self.url.path.startswith('/compute') or self.url.port in {8773, 8774, 8775}:
             return 'Nova'
-        elif self.url.path.startswith('/identity'):
+        elif self.url.path.startswith('/identity') or self.url.port in {5000, 35357}:
             return 'Keystone'
-        elif self.url.path.startswith('/volume'):
+        elif self.url.path.startswith('/volume') or self.url.port == 8776:
             return 'Cinder'
-        elif self.url.path.startswith('/image'):
+        elif self.url.path.startswith('/image') or self.url.port == 9292:
             return 'Glance'
-        return self.url.hostname
+        elif self.url.port == 9876:
+            return 'Octavia'
+        return "{}.{}".format(self.url.hostname, self.url.port)
 
     @classmethod
     def from_lines(cls, info, debug):
