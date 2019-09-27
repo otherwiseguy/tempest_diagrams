@@ -63,7 +63,9 @@ class TempestRequest(object):
             return 'Glance'
         elif self.url.port == 9876:
             return 'Octavia'
-        return "{}.{}".format(self.url.hostname, self.url.port)
+
+        port = self.url.port or 443 if self.url.scheme == 'https' else 80
+        return "{}.{}".format(self.url.hostname, port)
 
     @classmethod
     def from_lines(cls, info, debug):
