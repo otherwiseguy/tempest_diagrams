@@ -2,10 +2,13 @@
 
 Usage: python parse.py <filename> > out.html
 
+## Example
+![](demo/output.png)
+
+## TODO
 This is currently extremely brittle. The file can't have partial records
 for example.
 
-## TODO:
 - [ ] Make log line matching more robust
 - [ ] Handle an error or 12
 - [ ] Actually come up with a way to collapsibly display header/body info

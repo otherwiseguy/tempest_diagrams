@@ -1,0 +1,690 @@
+2019-09-25 09:51:58,373 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 201 POST https://158.69.68.206/identity/v3/auth/tokens
+2019-09-25 09:51:58,373 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        Body: <omitted>
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:51:58 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-type': 'application/json', 'content-length': '3252', 'x-subject-token': '<omitted>', 'vary': 'X-Auth-Token', 'x-openstack-request-id': 'req-865a4adb-20fb-4795-af4d-29692a08fbff', 'connection': 'close', 'status': '201', 'content-location': 'https://158.69.68.206/identity/v3/auth/tokens'}
+        Body: b'{"token": {"methods": ["password"], "user": {"domain": {"id": "default", "name": "Default"}, "id": "b20cd6fb248648d1bc864fb244325c63", "name": "tempest-InternalDNSTest-17058079", "password_expires_at": null}, "audit_ids": ["tLAv5-_8SRaKLGle9cwJcw"], "expires_at": "2019-09-25T10:51:58.000000Z", "issued_at": "2019-09-25T09:51:58.000000Z", "project": {"domain": {"id": "default", "name": "Default"}, "id": "2cc971d134234c498cca5b39d50c1c12", "name": "tempest-InternalDNSTest-17058079"}, "is_domain": false, "roles": [{"id": "06072285ebb94bfab87a88a9665a333a", "name": "member"}, {"id": "fd7f0dea59f04fa7a18095c1bb3ce3e9", "name": "reader"}], "catalog": [{"endpoints": [{"id": "fdd417a799dd4b1994ebbc15ed0e6ded", "interface": "public", "region_id": "RegionOne", "url": "https://158.69.68.206/image", "region": "RegionOne"}], "id": "05b4931974b5463db0b7fb8ab7193eb1", "type": "image", "name": "glance"}, {"endpoints": [{"id": "4543705416584d34859f676b0a0454f6", "interface": "public", "region_id": "RegionOne", "url": "https://158.69.68.206/identity", "region": "RegionOne"}, {"id": "4cb34fb3604a424292c6ac5d2e516be8", "interface": "admin", "region_id": "RegionOne", "url": "https://158.69.68.206/identity", "region": "RegionOne"}], "id": "191d932bc69d46db8c1f49a1a0ace95c", "type": "identity", "name": "keystone"}, {"endpoints": [{"id": "1fca38a930df46baa509a526ba82dd27", "interface": "public", "region_id": "RegionOne", "url": "https://158.69.68.206/volume/v3/2cc971d134234c498cca5b39d50c1c12", "region": "RegionOne"}], "id": "367bd0f44c8e41aaa6d658df7a48643a", "type": "block-storage", "name": "cinder"}, {"endpoints": [{"id": "3d4786a6d8fe4a3ab1a81e29965f3b27", "interface": "public", "region_id": "RegionOne", "url": "https://158.69.68.206/compute/v2/2cc971d134234c498cca5b39d50c1c12", "region": "RegionOne"}], "id": "3ec5a67344e14a62a4815c0da410ef9b", "type": "compute_legacy", "name": "nova_legacy"}, {"endpoints": [{"id": "5dae8f5371684280a658b843513b85e1", "interface": "public", "region_id": "RegionOne", "url": "https://158.69.68.206:9696/", "region": "RegionOne"}], "id": "84881b18f4084a9aa5859617c7535c90", "type": "network", "name": "neutron"}, {"endpoints": [{"id": "dc5d2e4e5a2942e183081f01d05d0c3e", "interface": "public", "region_id": "RegionOne", "url": "https://158.69.68.206/compute/v2.1", "region": "RegionOne"}], "id": "884eb2918e404e92bacb6b3123147a93", "type": "compute", "name": "nova"}, {"endpoints": [{"id": "38bdf586e6a44f4db089b95c8edd641e", "interface": "public", "region_id": "RegionOne", "url": "https://158.69.68.206/placement", "region": "RegionOne"}], "id": "8b31f24dbc454f8f86308cbc79b2d77a", "type": "placement", "name": "placement"}, {"endpoints": [{"id": "e978f916d9e644d29ca1c52eeed6bc2c", "interface": "public", "region_id": "RegionOne", "url": "https://158.69.68.206/volume/v2/2cc971d134234c498cca5b39d50c1c12", "region": "RegionOne"}], "id": "b5584146f4d145e9a3c6ca94d6448987", "type": "volumev2", "name": "cinderv2"}, {"endpoints": [{"id": "78c67c64629e431480e421613ff838c3", "interface": "public", "region_id": "RegionOne", "url": "https://158.69.68.206/volume/v3/2cc971d134234c498cca5b39d50c1c12", "region": "RegionOne"}], "id": "bce55ad498134a408bbeb0a2e83c032f", "type": "volumev3", "name": "cinderv3"}]}}'
+2019-09-25 09:51:59,543 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 201 POST https://158.69.68.206:9696/v2.0/networks 1.169s
+2019-09-25 09:51:59,543 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"network": {"name": "tempest-test-network--1029897089", "dns_domain": "starwars."}}
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:51:59 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-type': 'application/json', 'content-length': '594', 'x-openstack-request-id': 'req-6cdd4f57-8437-4697-b660-92daa58a36ff', 'connection': 'close', 'status': '201', 'content-location': 'https://158.69.68.206:9696/v2.0/networks'}
+        Body: b'{"network":{"id":"9efeaa49-2ad2-4e77-a85e-1d5d96978550","name":"tempest-test-network--1029897089","tenant_id":"2cc971d134234c498cca5b39d50c1c12","admin_state_up":true,"mtu":1392,"status":"ACTIVE","subnets":[],"shared":false,"project_id":"2cc971d134234c498cca5b39d50c1c12","port_security_enabled":true,"dns_domain":"starwars.","router:external":false,"availability_zone_hints":[],"is_default":false,"availability_zones":[],"ipv4_address_scope":null,"ipv6_address_scope":null,"description":"","tags":[],"created_at":"2019-09-25T09:51:58Z","updated_at":"2019-09-25T09:51:58Z","revision_number":1}}'
+2019-09-25 09:51:59,544 9560 DEBUG    [neutron_tempest_plugin.scenario.base] Created network tempest-test-network--1029897089
+2019-09-25 09:52:01,429 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 201 POST https://158.69.68.206:9696/v2.0/subnets 1.884s
+2019-09-25 09:52:01,430 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet": {"network_id": "9efeaa49-2ad2-4e77-a85e-1d5d96978550", "cidr": "10.1.0.0/28", "ip_version": 4, "gateway_ip": "10.1.0.1"}}
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:01 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-type': 'application/json', 'content-length': '594', 'x-openstack-request-id': 'req-5b988a0e-b2ee-409c-9af6-ffba3ac35d2d', 'connection': 'close', 'status': '201', 'content-location': 'https://158.69.68.206:9696/v2.0/subnets'}
+        Body: b'{"subnet":{"id":"aacc2085-5a7a-413f-82e3-650719ce44a8","name":"","tenant_id":"2cc971d134234c498cca5b39d50c1c12","network_id":"9efeaa49-2ad2-4e77-a85e-1d5d96978550","ip_version":4,"subnetpool_id":null,"enable_dhcp":true,"ipv6_ra_mode":null,"ipv6_address_mode":null,"gateway_ip":"10.1.0.1","cidr":"10.1.0.0/28","allocation_pools":[{"start":"10.1.0.2","end":"10.1.0.14"}],"host_routes":[],"dns_nameservers":[],"description":"","service_types":[],"tags":[],"created_at":"2019-09-25T09:51:59Z","updated_at":"2019-09-25T09:51:59Z","revision_number":0,"project_id":"2cc971d134234c498cca5b39d50c1c12"}}'
+2019-09-25 09:52:01,430 9560 DEBUG    [neutron_tempest_plugin.scenario.base] Created subnet aacc2085-5a7a-413f-82e3-650719ce44a8
+2019-09-25 09:52:01,617 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 201 POST https://158.69.68.206:9696/v2.0/security-groups 0.186s
+2019-09-25 09:52:01,617 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group": {"name": "tempest-secgroup-723781141"}}
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:01 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-type': 'application/json', 'content-length': '1358', 'x-openstack-request-id': 'req-1faf410c-293a-466b-9b5b-540e5025d5f5', 'connection': 'close', 'status': '201', 'content-location': 'https://158.69.68.206:9696/v2.0/security-groups'}
+        Body: b'{"security_group": {"id": "5b8cc338-6b2c-445d-a054-0145478ff70e", "name": "tempest-secgroup-723781141", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "description": "", "security_group_rules": [{"id": "5b1fc51b-d9e2-46d2-96d2-af852420c016", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "security_group_id": "5b8cc338-6b2c-445d-a054-0145478ff70e", "ethertype": "IPv6", "direction": "egress", "protocol": null, "port_range_min": null, "port_range_max": null, "remote_ip_prefix": null, "remote_group_id": null, "description": null, "tags": [], "created_at": "2019-09-25T09:52:01Z", "updated_at": "2019-09-25T09:52:01Z", "revision_number": 0, "project_id": "2cc971d134234c498cca5b39d50c1c12"}, {"id": "f940bbd2-5b2e-4b5d-bec7-fe0546fe7ded", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "security_group_id": "5b8cc338-6b2c-445d-a054-0145478ff70e", "ethertype": "IPv4", "direction": "egress", "protocol": null, "port_range_min": null, "port_range_max": null, "remote_ip_prefix": null, "remote_group_id": null, "description": null, "tags": [], "created_at": "2019-09-25T09:52:01Z", "updated_at": "2019-09-25T09:52:01Z", "revision_number": 0, "project_id": "2cc971d134234c498cca5b39d50c1c12"}], "tags": [], "created_at": "2019-09-25T09:52:01Z", "updated_at": "2019-09-25T09:52:01Z", "revision_number": 1, "project_id": "2cc971d134234c498cca5b39d50c1c12"}}'
+2019-09-25 09:52:01,618 9560 DEBUG    [neutron_tempest_plugin.scenario.base] Created security group tempest-secgroup-723781141
+2019-09-25 09:52:04,482 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 201 POST https://158.69.68.206:9696/v2.0/routers 2.863s
+2019-09-25 09:52:04,482 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "bd8a31b3-3d9f-48e9-9a91-5cc52d3aeba9"}, "name": "tempest-router-1982097545", "admin_state_up": true}}
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:04 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-type': 'application/json', 'content-length': '678', 'x-openstack-request-id': 'req-5184976a-6275-403d-9925-69ee036f2ee1', 'connection': 'close', 'status': '201', 'content-location': 'https://158.69.68.206:9696/v2.0/routers'}
+        Body: b'{"router": {"id": "be05455c-1832-49ab-ba69-89b528ba9f0a", "name": "tempest-router-1982097545", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "admin_state_up": true, "status": "ACTIVE", "external_gateway_info": {"network_id": "bd8a31b3-3d9f-48e9-9a91-5cc52d3aeba9", "external_fixed_ips": [{"subnet_id": "222e0a4b-42c8-48f1-935e-40f452f73e34", "ip_address": "172.24.5.157"}, {"subnet_id": "79a484df-0976-435b-a5bd-5b84a9e48ccb", "ip_address": "2001:db8::15b"}], "enable_snat": true}, "description": "", "routes": [], "tags": [], "created_at": "2019-09-25T09:52:01Z", "updated_at": "2019-09-25T09:52:03Z", "revision_number": 2, "project_id": "2cc971d134234c498cca5b39d50c1c12"}}'
+2019-09-25 09:52:04,482 9560 DEBUG    [neutron_tempest_plugin.scenario.base] Created router tempest-router-1982097545
+2019-09-25 09:52:08,518 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 PUT https://158.69.68.206:9696/v2.0/routers/be05455c-1832-49ab-ba69-89b528ba9f0a/add_router_interface 4.028s
+2019-09-25 09:52:08,518 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet_id": "aacc2085-5a7a-413f-82e3-650719ce44a8"}
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:08 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-type': 'application/json', 'content-length': '309', 'x-openstack-request-id': 'req-75ce24cf-8ae8-404e-9b40-018125ee9071', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206:9696/v2.0/routers/be05455c-1832-49ab-ba69-89b528ba9f0a/add_router_interface'}
+        Body: b'{"id": "be05455c-1832-49ab-ba69-89b528ba9f0a", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "port_id": "6d909799-72d9-451b-90d3-038f5c975577", "network_id": "9efeaa49-2ad2-4e77-a85e-1d5d96978550", "subnet_id": "aacc2085-5a7a-413f-82e3-650719ce44a8", "subnet_ids": ["aacc2085-5a7a-413f-82e3-650719ce44a8"]}'
+2019-09-25 09:52:08,702 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 POST https://158.69.68.206/compute/v2.1/os-keypairs 0.182s
+2019-09-25 09:52:08,702 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"keypair": {"name": "tempest-keypair-test-1014581709"}}
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:08 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '2310', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-2d368acc-dfa7-4448-9c0a-9ab7a8e6e06a', 'x-compute-request-id': 'req-2d368acc-dfa7-4448-9c0a-9ab7a8e6e06a', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/os-keypairs'}
+        Body: b'{"keypair": {"name": "tempest-keypair-test-1014581709", "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDd5M1SILA+fH9eb0uDl9iPOZXO2mAH1mqri2uIkW1eUvdiTrh4vH3rDKu0b3uNTw175nkSaHXcUR1b39J4NebmwKFY5aX2XlG9MecKbf7pJO4CGTQUHo/ah1sNv7JHRg39Nm9JIDZFQsJMzrS0nXHPIIOE7oNCn22NRQhIYFiR+EJucH4WGtSzMDuf+5tKS8o65q18DjSJOTaXeePOLaA7i0I3BklZX1zrKpAO/c8DSbgd6qz9CviJZ0gzkwozgc3WEFBJtFDwYOp3YH9nBgBrCmjsvdLemiJZlLtLNNgCiOiI7ssIo29PsEvjvy70PJA5oKozoYQm0zApPZSRskYr Generated-by-Nova", "fingerprint": "b7:71:52:eb:1f:9e:04:75:0a:1d:64:0c:69:49:13:c7", "user_id": "b20cd6fb248648d1bc864fb244325c63", "private_key": "-----BEGIN RSA PRIVATE KEY-----\\nMIIEpQIBAAKCAQEA3eTNUiCwPnx/Xm9Lg5fYjzmVztpgB9Zqq4triJFtXlL3Yk64\\neLx96wyrtG97jU8Ne+Z5Emh13FEdW9/SeDXm5sChWOWl9l5RvTHnCm3+6STuAhk0\\nFB6P2odbDb+yR0YN/TZvSSA2RULCTM60tJ1xzyCDhO6DQp9tjUUISGBYkfhCbnB+\\nFhrUszA7n/ubSkvKOuatfA40iTk2l3njzi2gO4tCNwZJWV9c6yqQDv3PA0m4Heqs\\n/Qr4iWdIM5MKM4HN1hBQSbRQ8GDqd2B/ZwYAawpo7L3S3poiWZS7SzTYAojoiO7L\\nCKNvT7BL478u9DyQOaCqM6GEJtMwKT2UkbJGKwIDAQABAoIBAQDZ58J2X6GUi6Bt\\nNbCbtze1V2C1taBOshMpCY59nAsicSl9wj7IWprxhAzu8fgMSlC8lxXYrPrpdEL3\\noXLIGG77trn8WfHEYtW0jVgN1v1ZKaoOJ4AMLgMpIHmbo+BIvBQq0RUyY87H74pt\\n8SRmpqNIO+7MUYpXl8b2z48VvH/eP3GFtgNxQTFQxDHDEbQv3XHxI3Jl+HfMfpra\\nCYiMaxHs3kRpgyrYT7MYmHU/GBejDAM2lYR6ftdigoLElbjW5XHaNSkEpszWY7SD\\nCG6B3cLXvC3O8kxzc6lxFbjUDPEnd7meMkvixsHk5VIudX1efKx0uoMgo5vICupc\\nHvZIBEhhAoGBAPQiab26yTE8GKvoBKj6nslQinAMU3rDSmHwRcX63eIbkdrX2YWV\\nen6rPZLfgqHONZlQTgItUL+yO22+xeJ3uZC2WyCluyOlkmGWloKBvsapBOBisbPZ\\n3ePk9FlJQz/94PDBnd6eRhgiTth7uIVNsemOSsybHfEjRuturLoMHF77AoGBAOit\\nqh9TsO8HjTotaXaQJ9PPZeNBsjbfIUY6vxUogte4uHygHL7BYcYdq/JM4gRM3NJM\\nRUTsRBzvhetFAeztzOvno2KSUzfH1tkzWJ0Zi0HVqMyjAsm1xA57T/VUgm67bWh0\\ncPq3CTSvI9L9tjHbzXwAxLBD8woSSFDngimTEE6RAoGBAKuOu0vuxI9qsdOr2gp9\\nA7RoesA+iTNNpSmp1P5JSj8oLJji8iLjZg85eq2Jj5zw8c1pF0iEW6g6MXTviNOa\\nWraMzwDkNdvY8ELPtbjEQDIOeDTOZh4CzeDl9agAyddgKwBErxHPm2Y+RbXvSz2x\\n2YJM0ddycdoQdjffsFWVSSKdAoGBAKxYDh28IN88KbiA8JAYgNeb1G07OST5qyzY\\n0LZ8VkYxFb2B3yjQFnrneXg0yGjFAf9m7Rv7IQyJwhkc+SskjNfjsJqPpcI4bIRf\\nSvC6ffKarrg8uhDsaLcNUZF3MlGQ1J49OX4LW29BlvhuYqiVlaOW8hlZi0jXd+ct\\nQ7VFsBtxAoGASqhCQhXEbj+DfH+Zp6hmvZ9YGgQkkgSN34bIJks1jU7r0CQpB+xM\\nyE7bNlwf0C0vbUgnbIzkkDY5gyXusU2s9EZxUnAB6HAJ0ZhJn8RX7aDvarW0yW/i\\nwUsg6ug9Fp4VYA9MQFIypAo5sbflUmklo9iiuzafBgTpQgqYt2Rj/SA=\\n-----END RSA PRIVATE KEY-----\\n"}}'
+2019-09-25 09:52:08,906 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 201 POST https://158.69.68.206:9696/v2.0/security-group-rules 0.201s
+2019-09-25 09:52:08,907 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"protocol": "tcp", "port_range_min": 22, "port_range_max": 22, "ethertype": "IPv4", "remote_ip_prefix": "0.0.0.0/0", "direction": "ingress", "security_group_id": "5b8cc338-6b2c-445d-a054-0145478ff70e"}}
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:08 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-type': 'application/json', 'content-length': '514', 'x-openstack-request-id': 'req-68fd01f4-477b-48eb-a6e2-71750e81378c', 'connection': 'close', 'status': '201', 'content-location': 'https://158.69.68.206:9696/v2.0/security-group-rules'}
+        Body: b'{"security_group_rule": {"id": "00c4f771-5141-4e48-b306-5664d8a6c527", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "security_group_id": "5b8cc338-6b2c-445d-a054-0145478ff70e", "ethertype": "IPv4", "direction": "ingress", "protocol": "tcp", "port_range_min": 22, "port_range_max": 22, "remote_ip_prefix": "0.0.0.0/0", "remote_group_id": null, "description": "", "created_at": "2019-09-25T09:52:08Z", "updated_at": "2019-09-25T09:52:08Z", "revision_number": 0, "project_id": "2cc971d134234c498cca5b39d50c1c12"}}'
+2019-09-25 09:52:11,212 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 202 POST https://158.69.68.206/compute/v2.1/servers 2.303s
+2019-09-25 09:52:11,212 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"server": {"flavorRef": "42", "imageRef": "afd1a604-d791-4c0a-8c1e-6c5b3c99f68c", "key_name": "tempest-keypair-test-1014581709", "networks": [{"uuid": "9efeaa49-2ad2-4e77-a85e-1d5d96978550"}], "security_groups": [{"name": "tempest-secgroup-723781141"}], "name": "luke"}}
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:08 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '405', 'location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-f1d08788-9fa8-4860-86a8-94c9c4866be5', 'x-compute-request-id': 'req-f1d08788-9fa8-4860-86a8-94c9c4866be5', 'connection': 'close', 'status': '202', 'content-location': 'https://158.69.68.206/compute/v2.1/servers'}
+        Body: b'{"server": {"id": "f6e4282a-9d32-486a-9f83-e2fa64d1475e", "links": [{"rel": "self", "href": "https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}, {"rel": "bookmark", "href": "https://158.69.68.206/compute/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}], "OS-DCF:diskConfig": "MANUAL", "security_groups": [{"name": "tempest-secgroup-723781141"}], "adminPass": "xENeXeQH5nAZ"}}'
+2019-09-25 09:52:11,376 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 GET https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.161s
+2019-09-25 09:52:11,376 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:11 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '1211', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-beebe6be-9da8-4491-bd0c-fbd9b0728e8b', 'x-compute-request-id': 'req-beebe6be-9da8-4491-bd0c-fbd9b0728e8b', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b'{"server": {"id": "f6e4282a-9d32-486a-9f83-e2fa64d1475e", "name": "luke", "status": "BUILD", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "user_id": "b20cd6fb248648d1bc864fb244325c63", "metadata": {}, "hostId": "", "image": {"id": "afd1a604-d791-4c0a-8c1e-6c5b3c99f68c", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/images/afd1a604-d791-4c0a-8c1e-6c5b3c99f68c"}]}, "flavor": {"id": "42", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/flavors/42"}]}, "created": "2019-09-25T09:52:11Z", "updated": "2019-09-25T09:52:11Z", "addresses": {}, "accessIPv4": "", "accessIPv6": "", "links": [{"rel": "self", "href": "https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}, {"rel": "bookmark", "href": "https://158.69.68.206/compute/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}], "OS-DCF:diskConfig": "MANUAL", "progress": 0, "OS-EXT-AZ:availability_zone": "", "config_drive": "", "key_name": "tempest-keypair-test-1014581709", "OS-SRV-USG:launched_at": null, "OS-SRV-USG:terminated_at": null, "OS-EXT-STS:task_state": "scheduling", "OS-EXT-STS:vm_state": "building", "OS-EXT-STS:power_state": 0, "os-extended-volumes:volumes_attached": []}}'
+2019-09-25 09:52:12,583 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 GET https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.190s
+2019-09-25 09:52:12,584 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:12 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '1263', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-1cbd17b3-e54b-4431-bd59-b1317efe5e1d', 'x-compute-request-id': 'req-1cbd17b3-e54b-4431-bd59-b1317efe5e1d', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b'{"server": {"id": "f6e4282a-9d32-486a-9f83-e2fa64d1475e", "name": "luke", "status": "BUILD", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "user_id": "b20cd6fb248648d1bc864fb244325c63", "metadata": {}, "hostId": "af3a5dc31e6b0d84683a52baf75458ba413c3926c7dd1435334b47d7", "image": {"id": "afd1a604-d791-4c0a-8c1e-6c5b3c99f68c", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/images/afd1a604-d791-4c0a-8c1e-6c5b3c99f68c"}]}, "flavor": {"id": "42", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/flavors/42"}]}, "created": "2019-09-25T09:52:11Z", "updated": "2019-09-25T09:52:12Z", "addresses": {}, "accessIPv4": "", "accessIPv6": "", "links": [{"rel": "self", "href": "https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}, {"rel": "bookmark", "href": "https://158.69.68.206/compute/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}], "OS-DCF:diskConfig": "MANUAL", "progress": 0, "OS-EXT-AZ:availability_zone": "nova", "config_drive": "", "key_name": "tempest-keypair-test-1014581709", "OS-SRV-USG:launched_at": null, "OS-SRV-USG:terminated_at": null, "OS-EXT-STS:task_state": null, "OS-EXT-STS:vm_state": "building", "OS-EXT-STS:power_state": 0, "os-extended-volumes:volumes_attached": []}}'
+2019-09-25 09:52:12,590 9560 INFO     [tempest.common.waiters] State transition "BUILD/scheduling" ==> "BUILD/None" after 1 second wait
+2019-09-25 09:52:13,748 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 GET https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.155s
+2019-09-25 09:52:13,748 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:13 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '1269', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-1dc0cb68-36b5-45f6-a1e9-5d9b13ed4997', 'x-compute-request-id': 'req-1dc0cb68-36b5-45f6-a1e9-5d9b13ed4997', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b'{"server": {"id": "f6e4282a-9d32-486a-9f83-e2fa64d1475e", "name": "luke", "status": "BUILD", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "user_id": "b20cd6fb248648d1bc864fb244325c63", "metadata": {}, "hostId": "af3a5dc31e6b0d84683a52baf75458ba413c3926c7dd1435334b47d7", "image": {"id": "afd1a604-d791-4c0a-8c1e-6c5b3c99f68c", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/images/afd1a604-d791-4c0a-8c1e-6c5b3c99f68c"}]}, "flavor": {"id": "42", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/flavors/42"}]}, "created": "2019-09-25T09:52:11Z", "updated": "2019-09-25T09:52:13Z", "addresses": {}, "accessIPv4": "", "accessIPv6": "", "links": [{"rel": "self", "href": "https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}, {"rel": "bookmark", "href": "https://158.69.68.206/compute/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}], "OS-DCF:diskConfig": "MANUAL", "progress": 0, "OS-EXT-AZ:availability_zone": "nova", "config_drive": "", "key_name": "tempest-keypair-test-1014581709", "OS-SRV-USG:launched_at": null, "OS-SRV-USG:terminated_at": null, "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-EXT-STS:power_state": 0, "os-extended-volumes:volumes_attached": []}}'
+2019-09-25 09:52:13,757 9560 INFO     [tempest.common.waiters] State transition "BUILD/None" ==> "BUILD/spawning" after 2 second wait
+2019-09-25 09:52:15,106 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 GET https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.338s
+2019-09-25 09:52:15,106 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:14 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '1330', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-03d5b537-4c6f-4176-aee6-df81978e6e6d', 'x-compute-request-id': 'req-03d5b537-4c6f-4176-aee6-df81978e6e6d', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b'{"server": {"id": "f6e4282a-9d32-486a-9f83-e2fa64d1475e", "name": "luke", "status": "BUILD", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "user_id": "b20cd6fb248648d1bc864fb244325c63", "metadata": {}, "hostId": "af3a5dc31e6b0d84683a52baf75458ba413c3926c7dd1435334b47d7", "image": {"id": "afd1a604-d791-4c0a-8c1e-6c5b3c99f68c", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/images/afd1a604-d791-4c0a-8c1e-6c5b3c99f68c"}]}, "flavor": {"id": "42", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/flavors/42"}]}, "created": "2019-09-25T09:52:11Z", "updated": "2019-09-25T09:52:13Z", "addresses": {}, "accessIPv4": "", "accessIPv6": "", "links": [{"rel": "self", "href": "https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}, {"rel": "bookmark", "href": "https://158.69.68.206/compute/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}], "OS-DCF:diskConfig": "MANUAL", "progress": 0, "OS-EXT-AZ:availability_zone": "nova", "config_drive": "", "key_name": "tempest-keypair-test-1014581709", "OS-SRV-USG:launched_at": null, "OS-SRV-USG:terminated_at": null, "security_groups": [{"name": "tempest-secgroup-723781141"}], "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-EXT-STS:power_state": 0, "os-extended-volumes:volumes_attached": []}}'
+2019-09-25 09:52:16,407 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 GET https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.294s
+2019-09-25 09:52:16,408 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:16 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '1330', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-ac11fe43-8e55-4d68-b02d-33544192398d', 'x-compute-request-id': 'req-ac11fe43-8e55-4d68-b02d-33544192398d', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b'{"server": {"id": "f6e4282a-9d32-486a-9f83-e2fa64d1475e", "name": "luke", "status": "BUILD", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "user_id": "b20cd6fb248648d1bc864fb244325c63", "metadata": {}, "hostId": "af3a5dc31e6b0d84683a52baf75458ba413c3926c7dd1435334b47d7", "image": {"id": "afd1a604-d791-4c0a-8c1e-6c5b3c99f68c", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/images/afd1a604-d791-4c0a-8c1e-6c5b3c99f68c"}]}, "flavor": {"id": "42", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/flavors/42"}]}, "created": "2019-09-25T09:52:11Z", "updated": "2019-09-25T09:52:13Z", "addresses": {}, "accessIPv4": "", "accessIPv6": "", "links": [{"rel": "self", "href": "https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}, {"rel": "bookmark", "href": "https://158.69.68.206/compute/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}], "OS-DCF:diskConfig": "MANUAL", "progress": 0, "OS-EXT-AZ:availability_zone": "nova", "config_drive": "", "key_name": "tempest-keypair-test-1014581709", "OS-SRV-USG:launched_at": null, "OS-SRV-USG:terminated_at": null, "security_groups": [{"name": "tempest-secgroup-723781141"}], "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-EXT-STS:power_state": 0, "os-extended-volumes:volumes_attached": []}}'
+2019-09-25 09:52:18,357 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 GET https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.943s
+2019-09-25 09:52:18,358 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:17 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '1330', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-c31e43b1-8965-4f52-9fd0-81cc62408df2', 'x-compute-request-id': 'req-c31e43b1-8965-4f52-9fd0-81cc62408df2', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b'{"server": {"id": "f6e4282a-9d32-486a-9f83-e2fa64d1475e", "name": "luke", "status": "BUILD", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "user_id": "b20cd6fb248648d1bc864fb244325c63", "metadata": {}, "hostId": "af3a5dc31e6b0d84683a52baf75458ba413c3926c7dd1435334b47d7", "image": {"id": "afd1a604-d791-4c0a-8c1e-6c5b3c99f68c", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/images/afd1a604-d791-4c0a-8c1e-6c5b3c99f68c"}]}, "flavor": {"id": "42", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/flavors/42"}]}, "created": "2019-09-25T09:52:11Z", "updated": "2019-09-25T09:52:13Z", "addresses": {}, "accessIPv4": "", "accessIPv6": "", "links": [{"rel": "self", "href": "https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}, {"rel": "bookmark", "href": "https://158.69.68.206/compute/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}], "OS-DCF:diskConfig": "MANUAL", "progress": 0, "OS-EXT-AZ:availability_zone": "nova", "config_drive": "", "key_name": "tempest-keypair-test-1014581709", "OS-SRV-USG:launched_at": null, "OS-SRV-USG:terminated_at": null, "security_groups": [{"name": "tempest-secgroup-723781141"}], "OS-EXT-STS:task_state": "spawning", "OS-EXT-STS:vm_state": "building", "OS-EXT-STS:power_state": 0, "os-extended-volumes:volumes_attached": []}}'
+2019-09-25 09:52:19,706 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 GET https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.336s
+2019-09-25 09:52:19,707 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:19 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '1496', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-8f1f1a5c-efce-4972-9172-c4643b41b173', 'x-compute-request-id': 'req-8f1f1a5c-efce-4972-9172-c4643b41b173', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b'{"server": {"id": "f6e4282a-9d32-486a-9f83-e2fa64d1475e", "name": "luke", "status": "ACTIVE", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "user_id": "b20cd6fb248648d1bc864fb244325c63", "metadata": {}, "hostId": "af3a5dc31e6b0d84683a52baf75458ba413c3926c7dd1435334b47d7", "image": {"id": "afd1a604-d791-4c0a-8c1e-6c5b3c99f68c", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/images/afd1a604-d791-4c0a-8c1e-6c5b3c99f68c"}]}, "flavor": {"id": "42", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/flavors/42"}]}, "created": "2019-09-25T09:52:11Z", "updated": "2019-09-25T09:52:19Z", "addresses": {"tempest-test-network--1029897089": [{"version": 4, "addr": "10.1.0.11", "OS-EXT-IPS:type": "fixed", "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:7b:c6:e2"}]}, "accessIPv4": "", "accessIPv6": "", "links": [{"rel": "self", "href": "https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}, {"rel": "bookmark", "href": "https://158.69.68.206/compute/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}], "OS-DCF:diskConfig": "MANUAL", "progress": 0, "OS-EXT-AZ:availability_zone": "nova", "config_drive": "", "key_name": "tempest-keypair-test-1014581709", "OS-SRV-USG:launched_at": "2019-09-25T09:52:19.000000", "OS-SRV-USG:terminated_at": null, "security_groups": [{"name": "tempest-secgroup-723781141"}], "OS-EXT-STS:task_state": null, "OS-EXT-STS:vm_state": "active", "OS-EXT-STS:power_state": 1, "os-extended-volumes:volumes_attached": []}}'
+2019-09-25 09:52:19,714 9560 INFO     [tempest.common.waiters] State transition "BUILD/spawning" ==> "ACTIVE/None" after 8 second wait
+2019-09-25 09:52:19,811 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 GET https://158.69.68.206:9696/v2.0/ports?network_id=9efeaa49-2ad2-4e77-a85e-1d5d96978550&device_id=f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.095s
+2019-09-25 09:52:19,811 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:19 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-type': 'application/json', 'content-length': '856', 'x-openstack-request-id': 'req-2a9ba217-3a96-4570-b69e-85a7a887ab45', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206:9696/v2.0/ports?network_id=9efeaa49-2ad2-4e77-a85e-1d5d96978550&device_id=f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b'{"ports":[{"id":"26c263ee-013e-40a7-b61f-5d41e8aa16f6","name":"","network_id":"9efeaa49-2ad2-4e77-a85e-1d5d96978550","tenant_id":"2cc971d134234c498cca5b39d50c1c12","mac_address":"fa:16:3e:7b:c6:e2","admin_state_up":true,"status":"ACTIVE","device_id":"f6e4282a-9d32-486a-9f83-e2fa64d1475e","device_owner":"compute:nova","fixed_ips":[{"subnet_id":"aacc2085-5a7a-413f-82e3-650719ce44a8","ip_address":"10.1.0.11"}],"allowed_address_pairs":[],"extra_dhcp_opts":[],"security_groups":["5b8cc338-6b2c-445d-a054-0145478ff70e"],"description":"","binding:vnic_type":"normal","port_security_enabled":true,"dns_name":"luke","dns_assignment":[{"ip_address":"10.1.0.11","hostname":"luke","fqdn":"luke.ovngate.local."}],"tags":[],"created_at":"2019-09-25T09:52:13Z","updated_at":"2019-09-25T09:52:18Z","revision_number":5,"project_id":"2cc971d134234c498cca5b39d50c1c12"}]}'
+2019-09-25 09:52:23,920 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 201 POST https://158.69.68.206:9696/v2.0/floatingips 4.107s
+2019-09-25 09:52:23,921 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"floatingip": {"floating_network_id": "bd8a31b3-3d9f-48e9-9a91-5cc52d3aeba9", "port_id": "26c263ee-013e-40a7-b61f-5d41e8aa16f6"}}
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:23 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-type': 'application/json', 'content-length': '580', 'x-openstack-request-id': 'req-ffb357c7-1c55-4e63-8823-fb74bc67b51f', 'connection': 'close', 'status': '201', 'content-location': 'https://158.69.68.206:9696/v2.0/floatingips'}
+        Body: b'{"floatingip": {"id": "342c5bdd-7877-4995-8543-2db0fec4b0b7", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "floating_ip_address": "172.24.5.80", "floating_network_id": "bd8a31b3-3d9f-48e9-9a91-5cc52d3aeba9", "router_id": "be05455c-1832-49ab-ba69-89b528ba9f0a", "port_id": "26c263ee-013e-40a7-b61f-5d41e8aa16f6", "fixed_ip_address": "10.1.0.11", "status": "DOWN", "project_id": "2cc971d134234c498cca5b39d50c1c12", "description": "", "dns_domain": "", "dns_name": "", "tags": [], "created_at": "2019-09-25T09:52:21Z", "updated_at": "2019-09-25T09:52:21Z", "revision_number": 0}}'
+2019-09-25 09:52:24,322 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 201 POST https://158.69.68.206:9696/v2.0/security-group-rules 0.400s
+2019-09-25 09:52:24,322 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"security_group_rule": {"protocol": "icmp", "ethertype": "IPv4", "remote_ip_prefix": "0.0.0.0/0", "direction": "ingress", "security_group_id": "5b8cc338-6b2c-445d-a054-0145478ff70e"}}
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 09:52:24 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-type': 'application/json', 'content-length': '519', 'x-openstack-request-id': 'req-b121a91e-2227-40b9-8a3a-afadc3cc9b6b', 'connection': 'close', 'status': '201', 'content-location': 'https://158.69.68.206:9696/v2.0/security-group-rules'}
+        Body: b'{"security_group_rule": {"id": "90b707bf-a6ce-49d1-8509-f9bd1f4b706f", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "security_group_id": "5b8cc338-6b2c-445d-a054-0145478ff70e", "ethertype": "IPv4", "direction": "ingress", "protocol": "icmp", "port_range_min": null, "port_range_max": null, "remote_ip_prefix": "0.0.0.0/0", "remote_group_id": null, "description": "", "created_at": "2019-09-25T09:52:24Z", "updated_at": "2019-09-25T09:52:24Z", "revision_number": 0, "project_id": "2cc971d134234c498cca5b39d50c1c12"}}'
+2019-09-25 09:52:24,324 9560 INFO     [tempest.lib.common.ssh] Creating ssh connection to '172.24.5.80:22' as 'cirros' with public key authentication
+2019-09-25 09:52:34,331 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 1. Retry after 2 seconds.
+2019-09-25 09:52:46,839 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 2. Retry after 3 seconds.
+2019-09-25 09:53:00,352 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 3. Retry after 4 seconds.
+2019-09-25 09:53:14,871 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 4. Retry after 5 seconds.
+2019-09-25 09:53:30,389 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 5. Retry after 6 seconds.
+2019-09-25 09:53:46,904 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 6. Retry after 7 seconds.
+2019-09-25 09:54:04,428 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 7. Retry after 8 seconds.
+2019-09-25 09:54:22,951 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 8. Retry after 9 seconds.
+2019-09-25 09:54:42,472 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 9. Retry after 10 seconds.
+2019-09-25 09:55:02,988 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 10. Retry after 11 seconds.
+2019-09-25 09:55:24,510 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 11. Retry after 12 seconds.
+2019-09-25 09:55:47,032 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 12. Retry after 13 seconds.
+2019-09-25 09:56:10,556 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 13. Retry after 14 seconds.
+2019-09-25 09:56:35,082 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 14. Retry after 15 seconds.
+2019-09-25 09:57:00,600 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 15. Retry after 16 seconds.
+2019-09-25 09:57:27,126 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 16. Retry after 17 seconds.
+2019-09-25 09:57:54,649 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 17. Retry after 18 seconds.
+2019-09-25 09:58:23,181 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 18. Retry after 19 seconds.
+2019-09-25 09:58:52,707 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 19. Retry after 20 seconds.
+2019-09-25 09:59:23,240 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 20. Retry after 21 seconds.
+2019-09-25 09:59:54,778 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 21. Retry after 22 seconds.
+2019-09-25 10:00:27,310 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 22. Retry after 23 seconds.
+2019-09-25 10:01:00,848 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 23. Retry after 24 seconds.
+2019-09-25 10:01:35,387 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 24. Retry after 25 seconds.
+2019-09-25 10:02:10,904 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 25. Retry after 26 seconds.
+2019-09-25 10:02:47,437 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 26. Retry after 27 seconds.
+2019-09-25 10:03:24,984 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 27. Retry after 28 seconds.
+2019-09-25 10:04:03,528 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 28. Retry after 29 seconds.
+2019-09-25 10:04:43,072 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 29. Retry after 30 seconds.
+2019-09-25 10:05:23,608 9560 WARNING  [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 (timed out). Number attempts: 30. Retry after 31 seconds.
+2019-09-25 10:06:05,151 9560 ERROR    [tempest.lib.common.ssh] Failed to establish authenticated ssh connection to cirros@172.24.5.80 after 30 attempts
+2019-09-25 10:06:05.151 9560 ERROR tempest.lib.common.ssh Traceback (most recent call last):
+2019-09-25 10:06:05.151 9560 ERROR tempest.lib.common.ssh   File "/opt/stack/tempest/tempest/lib/common/ssh.py", line 107, in _get_ssh_connection
+2019-09-25 10:06:05.151 9560 ERROR tempest.lib.common.ssh     sock=proxy_chan)
+2019-09-25 10:06:05.151 9560 ERROR tempest.lib.common.ssh   File "/usr/local/lib/python3.6/dist-packages/paramiko/client.py", line 349, in connect
+2019-09-25 10:06:05.151 9560 ERROR tempest.lib.common.ssh     retry_on_signal(lambda: sock.connect(addr))
+2019-09-25 10:06:05.151 9560 ERROR tempest.lib.common.ssh   File "/usr/local/lib/python3.6/dist-packages/paramiko/util.py", line 280, in retry_on_signal
+2019-09-25 10:06:05.151 9560 ERROR tempest.lib.common.ssh     return function()
+2019-09-25 10:06:05.151 9560 ERROR tempest.lib.common.ssh   File "/usr/local/lib/python3.6/dist-packages/paramiko/client.py", line 349, in <lambda>
+2019-09-25 10:06:05.151 9560 ERROR tempest.lib.common.ssh     retry_on_signal(lambda: sock.connect(addr))
+2019-09-25 10:06:05.151 9560 ERROR tempest.lib.common.ssh socket.timeout: timed out
+2019-09-25 10:06:05.151 9560 ERROR tempest.lib.common.ssh 
+2019-09-25 10:06:05,160 9560 DEBUG    [neutron_tempest_plugin.scenario.base] Connection to the 172.24.5.80 via SSH timed out.
+User: cirros, Password: None
+2019-09-25 10:06:05,730 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 GET https://158.69.68.206/compute/v2.1/servers 0.568s
+2019-09-25 10:06:05,731 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 10:06:05 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '303', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-e2662c8d-fe55-446e-9c7e-51618591591d', 'x-compute-request-id': 'req-e2662c8d-fe55-446e-9c7e-51618591591d', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/servers'}
+        Body: b'{"servers": [{"id": "f6e4282a-9d32-486a-9f83-e2fa64d1475e", "name": "luke", "links": [{"rel": "self", "href": "https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}, {"rel": "bookmark", "href": "https://158.69.68.206/compute/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}]}]}'
+2019-09-25 10:06:05,929 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:test_dns_domain_and_name): 200 POST https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e/action 0.191s
+2019-09-25 10:06:05,930 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"os-getConsoleOutput": {}}
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 10:06:05 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '30948', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-0078b8db-2c86-4d4c-ae85-d689d5ba118e', 'x-compute-request-id': 'req-0078b8db-2c86-4d4c-ae85-d689d5ba118e', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e/action'}
+        Body: b'{"output": "[    0.000000] Initializing cgroup subsys cpuset\\n[    0.000000] Initializing cgroup subsys cpu\\n[    0.000000] Initializing cgroup subsys cpuacct\\n[    0.000000] Linux version 4.4.0-28-generic (buildd@lcy01-13) (gcc version 5.3.1 20160413 (Ubuntu 5.3.1-14ubuntu2.1) ) #47-Ubuntu SMP Fri Jun 24 10:09:13 UTC 2016 (Ubuntu 4.4.0-28.47-generic 4.4.13)\\n[    0.000000] Command line: LABEL=cirros-rootfs ro console=tty1 console=ttyS0\\n[    0.000000] KERNEL supported cpus:\\n[    0.000000]   Intel GenuineIntel\\n[    0.000000]   AMD AuthenticAMD\\n[    0.000000]   Centaur CentaurHauls\\n[    0.000000] x86/fpu: Legacy x87 FPU detected.\\n[    0.000000] x86/fpu: Using \'lazy\' FPU context switches.\\n[    0.000000] e820: BIOS-provided physical RAM map:\\n[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable\\n[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved\\n[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved\\n[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x0000000003fdbfff] usable\\n[    0.000000] BIOS-e820: [mem 0x0000000003fdc000-0x0000000003ffffff] reserved\\n[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved\\n[    0.000000] NX (Execute Disable) protection: active\\n[    0.000000] SMBIOS 2.8 present.\\n[    0.000000] e820: last_pfn = 0x3fdc max_arch_pfn = 0x400000000\\n[    0.000000] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WC  UC- WT  \\n[    0.000000] found SMP MP-table at [mem 0x000f6a80-0x000f6a8f] mapped at [ffff8800000f6a80]\\n[    0.000000] Scanning 1 areas for low memory corruption\\n[    0.000000] RAMDISK: [mem 0x03b16000-0x03fcbfff]\\n[    0.000000] ACPI: Early table checksum verification disabled\\n[    0.000000] ACPI: RSDP 0x00000000000F6880 000014 (v00 BOCHS )\\n[    0.000000] ACPI: RSDT 0x0000000003FE15C9 000030 (v01 BOCHS  BXPCRSDT 00000001 BXPC 00000001)\\n[    0.000000] ACPI: FACP 0x0000000003FE1425 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)\\n[    0.000000] ACPI: DSDT 0x0000000003FE0040 0013E5 (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)\\n[    0.000000] ACPI: FACS 0x0000000003FE0000 000040\\n[    0.000000] ACPI: APIC 0x0000000003FE1519 000078 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)\\n[    0.000000] ACPI: HPET 0x0000000003FE1591 000038 (v01 BOCHS  BXPCHPET 00000001 BXPC 00000001)\\n[    0.000000] No NUMA configuration found\\n[    0.000000] Faking a node at [mem 0x0000000000000000-0x0000000003fdbfff]\\n[    0.000000] NODE_DATA(0) allocated [mem 0x03fd7000-0x03fdbfff]\\n[    0.000000] Zone ranges:\\n[    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]\\n[    0.000000]   DMA32    [mem 0x0000000001000000-0x0000000003fdbfff]\\n[    0.000000]   Normal   empty\\n[    0.000000]   Device   empty\\n[    0.000000] Movable zone start for each node\\n[    0.000000] Early memory node ranges\\n[    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009efff]\\n[    0.000000]   node   0: [mem 0x0000000000100000-0x0000000003fdbfff]\\n[    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x0000000003fdbfff]\\n[    0.000000] ACPI: PM-Timer IO Port: 0x608\\n[    0.000000] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])\\n[    0.000000] IOAPIC[0]: apic_id 0, version 32, address 0xfec00000, GSI 0-23\\n[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)\\n[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)\\n[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)\\n[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)\\n[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)\\n[    0.000000] Using ACPI (MADT) for SMP configuration information\\n[    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000\\n[    0.000000] smpboot: Allowing 1 CPUs, 0 hotplug CPUs\\n[    0.000000] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]\\n[    0.000000] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]\\n[    0.000000] PM: Registered nosave m
+2019-09-25 10:06:05,933 9560 DEBUG    [neutron_tempest_plugin.scenario.base] Console output for f6e4282a-9d32-486a-9f83-e2fa64d1475e
+body=
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 4.4.0-28-generic (buildd@lcy01-13) (gcc version 5.3.1 20160413 (Ubuntu 5.3.1-14ubuntu2.1) ) #47-Ubuntu SMP Fri Jun 24 10:09:13 UTC 2016 (Ubuntu 4.4.0-28.47-generic 4.4.13)
+[    0.000000] Command line: LABEL=cirros-rootfs ro console=tty1 console=ttyS0
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Centaur CentaurHauls
+[    0.000000] x86/fpu: Legacy x87 FPU detected.
+[    0.000000] x86/fpu: Using 'lazy' FPU context switches.
+[    0.000000] e820: BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x0000000003fdbfff] usable
+[    0.000000] BIOS-e820: [mem 0x0000000003fdc000-0x0000000003ffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] SMBIOS 2.8 present.
+[    0.000000] e820: last_pfn = 0x3fdc max_arch_pfn = 0x400000000
+[    0.000000] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WC  UC- WT  
+[    0.000000] found SMP MP-table at [mem 0x000f6a80-0x000f6a8f] mapped at [ffff8800000f6a80]
+[    0.000000] Scanning 1 areas for low memory corruption
+[    0.000000] RAMDISK: [mem 0x03b16000-0x03fcbfff]
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] ACPI: RSDP 0x00000000000F6880 000014 (v00 BOCHS )
+[    0.000000] ACPI: RSDT 0x0000000003FE15C9 000030 (v01 BOCHS  BXPCRSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACP 0x0000000003FE1425 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)
+[    0.000000] ACPI: DSDT 0x0000000003FE0040 0013E5 (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACS 0x0000000003FE0000 000040
+[    0.000000] ACPI: APIC 0x0000000003FE1519 000078 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)
+[    0.000000] ACPI: HPET 0x0000000003FE1591 000038 (v01 BOCHS  BXPCHPET 00000001 BXPC 00000001)
+[    0.000000] No NUMA configuration found
+[    0.000000] Faking a node at [mem 0x0000000000000000-0x0000000003fdbfff]
+[    0.000000] NODE_DATA(0) allocated [mem 0x03fd7000-0x03fdbfff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.000000]   DMA32    [mem 0x0000000001000000-0x0000000003fdbfff]
+[    0.000000]   Normal   empty
+[    0.000000]   Device   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.000000]   node   0: [mem 0x0000000000100000-0x0000000003fdbfff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x0000000003fdbfff]
+[    0.000000] ACPI: PM-Timer IO Port: 0x608
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.000000] IOAPIC[0]: apic_id 0, version 32, address 0xfec00000, GSI 0-23
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.000000] Using ACPI (MADT) for SMP configuration information
+[    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.000000] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.000000] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.000000] e820: [mem 0x04000000-0xfffbffff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on bare hardware
+[    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+[    0.000000] setup_percpu: NR_CPUS:256 nr_cpumask_bits:256 nr_cpu_ids:1 nr_node_ids:1
+[    0.000000] PERCPU: Embedded 33 pages/cpu @ffff880003800000 s98008 r8192 d28968 u2097152
+[    0.000000] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 15973
+[    0.000000] Policy zone: DMA32
+[    0.000000] Kernel command line: LABEL=cirros-rootfs ro console=tty1 console=ttyS0
+[    0.000000] PID hash table entries: 256 (order: -1, 2048 bytes)
+[    0.000000] Memory: 39220K/65000K available (8368K kernel code, 1280K rwdata, 3928K rodata, 1480K init, 1292K bss, 25780K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000]  Build-time adjustment of leaf fanout to 64.
+[    0.000000]  RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=1.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64, nr_cpu_ids=1
+[    0.000000] NR_IRQS:16640 nr_irqs:256 16
+[    0.000000] Console: colour VGA+ 80x25
+[    0.000000] console [tty1] enabled
+[    0.000000] console [ttyS0] enabled
+[    0.000000] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    0.000000] tsc: Fast TSC calibration using PIT
+[    0.000000] tsc: Detected 2394.485 MHz processor
+[    0.018763] Calibrating delay loop (skipped), value calculated using timer frequency.. 4788.97 BogoMIPS (lpj=9577940)
+[    0.020000] pid_max: default: 32768 minimum: 301
+[    0.020308] ACPI: Core revision 20150930
+[    0.057555] ACPI: 1 ACPI AML tables successfully acquired and loaded
+[    0.059713] Security Framework initialized
+[    0.060139] Yama: becoming mindful.
+[    0.063578] AppArmor: AppArmor initialized
+[    0.066676] Dentry cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.068087] Inode-cache hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.068987] Mount-cache hash table entries: 512 (order: 0, 4096 bytes)
+[    0.069589] Mountpoint-cache hash table entries: 512 (order: 0, 4096 bytes)
+[    0.087389] Initializing cgroup subsys io
+[    0.088876] Initializing cgroup subsys memory
+[    0.090366] Initializing cgroup subsys devices
+[    0.092288] Initializing cgroup subsys freezer
+[    0.093762] Initializing cgroup subsys net_cls
+[    0.094538] Initializing cgroup subsys perf_event
+[    0.096211] Initializing cgroup subsys net_prio
+[    0.097899] Initializing cgroup subsys hugetlb
+[    0.098889] Initializing cgroup subsys pids
+[    0.102859] mce: CPU supports 10 MCE banks
+[    0.105583] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[    0.106128] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+[    0.554635] Freeing SMP alternatives memory: 28K (ffffffff820b4000 - ffffffff820bb000)
+[    0.569444] ftrace: allocating 31920 entries in 125 pages
+[    0.654754] smpboot: Max logical packages: 1
+[    0.656801] smpboot: APIC(0) Converting physical 0 to logical package 0
+[    0.664000] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.704000] smpboot: CPU0: AMD QEMU Virtual CPU version 2.5+ (family: 0x6, model: 0x6, stepping: 0x3)
+[    0.704000] Performance Events: Broken PMU hardware detected, using software events only.
+[    0.705126] Failed to access perfctr msr (MSR c0010007 is 0)
+[    0.722622] x86: Booted up 1 node, 1 CPUs
+[    0.723674] smpboot: Total of 1 processors activated (4788.97 BogoMIPS)
+[    0.729045] NMI watchdog: disabled (cpu0): hardware events not enabled
+[    0.730474] NMI watchdog: Shutting down hard lockup detector on all cpus
+[    0.744441] devtmpfs: initialized
+[    0.762994] evm: security.selinux
+[    0.763812] evm: security.SMACK64
+[    0.764036] evm: security.SMACK64EXEC
+[    0.764739] evm: security.SMACK64TRANSMUTE
+[    0.765609] evm: security.SMACK64MMAP
+[    0.766163] evm: security.ima
+[    0.766772] evm: security.capability
+[    0.771430] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.774725] pinctrl core: initialized pinctrl subsystem
+[    0.785448] RTC time:  9:52:21, date: 09/25/19
+[    0.793015] NET: Registered protocol family 16
+[    0.802040] cpuidle: using governor ladder
+[    0.803108] cpuidle: using governor menu
+[    0.804059] PCCT header not found.
+[    0.806303] ACPI: bus type PCI registered
+[    0.807277] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.811144] PCI: Using configuration type 1 for base access
+[    0.843206] ACPI: Added _OSI(Module Device)
+[    0.843800] ACPI: Added _OSI(Processor Device)
+[    0.844047] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.844874] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.886258] ACPI: Interpreter enabled
+[    0.888712] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S1_] (20150930/hwxface-580)
+[    0.892121] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S2_] (20150930/hwxface-580)
+[    0.894613] ACPI: (supports S0 S3 S4 S5)
+[    0.895289] ACPI: Using IOAPIC for interrupt routing
+[    0.897893] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.950377] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.951659] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+[    0.952281] acpi PNP0A03:00: _OSC failed (AE_NOT_FOUND); disabling ASPM
+[    0.953681] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[    0.964308] acpiphp: Slot [3] registered
+[    0.965404] acpiphp: Slot [4] registered
+[    0.966423] acpiphp: Slot [5] registered
+[    0.967185] acpiphp: Slot [6] registered
+[    0.968283] acpiphp: Slot [7] registered
+[    0.968780] acpiphp: Slot [8] registered
+[    0.969532] acpiphp: Slot [9] registered
+[    0.970274] acpiphp: Slot [10] registered
+[    0.971249] acpiphp: Slot [11] registered
+[    0.972234] acpiphp: Slot [12] registered
+[    0.972811] acpiphp: Slot [13] registered
+[    0.973337] acpiphp: Slot [14] registered
+[    0.974301] acpiphp: Slot [15] registered
+[    0.975263] acpiphp: Slot [16] registered
+[    0.976212] acpiphp: Slot [17] registered
+[    0.977459] acpiphp: Slot [18] registered
+[    0.978563] acpiphp: Slot [19] registered
+[    0.980206] acpiphp: Slot [20] registered
+[    0.981292] acpiphp: Slot [21] registered
+[    0.982417] acpiphp: Slot [22] registered
+[    0.983406] acpiphp: Slot [23] registered
+[    0.984202] acpiphp: Slot [24] registered
+[    0.984991] acpiphp: Slot [25] registered
+[    0.986126] acpiphp: Slot [26] registered
+[    0.986738] acpiphp: Slot [27] registered
+[    0.987465] acpiphp: Slot [28] registered
+[    0.988234] acpiphp: Slot [29] registered
+[    0.989267] acpiphp: Slot [30] registered
+[    0.990149] acpiphp: Slot [31] registered
+[    0.992247] PCI host bridge to bus 0000:00
+[    0.993000] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.993725] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.994285] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.995119] pci_bus 0000:00: root bus resource [mem 0x04000000-0xfebfffff window]
+[    0.996070] pci_bus 0000:00: root bus resource [mem 0x100000000-0x17fffffff window]
+[    0.997631] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.012794] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+[    1.014325] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+[    1.014978] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+[    1.016098] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+[    1.025601] pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+[    1.026311] pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+[    1.089220] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+[    1.091695] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+[    1.093416] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+[    1.095639] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+[    1.097018] ACPI: PCI Interrupt Link [LNKS] (IRQs *9)
+[    1.101419] ACPI: Enabled 2 GPEs in block 00 to 0F
+[    1.116000] vgaarb: setting as boot device: PCI:0000:00:02.0
+[    1.116000] vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+[    1.116094] vgaarb: loaded
+[    1.116872] vgaarb: bridge control possible 0000:00:02.0
+[    1.128424] SCSI subsystem initialized
+[    1.138932] ACPI: bus type USB registered
+[    1.140759] usbcore: registered new interface driver usbfs
+[    1.141723] usbcore: registered new interface driver hub
+[    1.142741] usbcore: registered new device driver usb
+[    1.148300] PCI: Using ACPI for IRQ routing
+[    1.158158] NetLabel: Initializing
+[    1.158505] NetLabel:  domain hash size = 128
+[    1.158757] NetLabel:  protocols = UNLABELED CIPSOv4
+[    1.160357] NetLabel:  unlabeled traffic allowed by default
+[    1.163162] HPET: 3 timers in total, 0 timers will be used for per-cpu timer
+[    1.164149] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    1.165481] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[    1.175455] clocksource: Switched to clocksource hpet
+[    1.331688] AppArmor: AppArmor Filesystem Enabled
+[    1.334724] pnp: PnP ACPI init
+[    1.343503] pnp: PnP ACPI: found 5 devices
+[    1.389642] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    1.397201] NET: Registered protocol family 2
+[    1.410687] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    1.413306] TCP bind hash table entries: 512 (order: 1, 8192 bytes)
+[    1.415629] TCP: Hash tables configured (established 512 bind 512)
+[    1.418854] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    1.421599] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    1.425369] NET: Registered protocol family 1
+[    1.426287] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    1.427444] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+[    1.428364] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[    1.694363] ACPI: PCI Interrupt Link [LNKD] enabled at IRQ 11
+[    2.011923] Trying to unpack rootfs image as initramfs...
+[    2.537061] Freeing initrd memory: 4824K (ffff880003b16000 - ffff880003fcc000)
+[    2.541431] Scanning for low memory corruption every 60 seconds
+[    2.549266] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    2.551477] audit: initializing netlink subsys (disabled)
+[    2.553633] audit: type=2000 audit(1569405142.552:1): initialized
+[    2.558406] Initialise system trusted keyring
+[    2.562872] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[    2.582373] zbud: loaded
+[    2.586357] VFS: Disk quotas dquot_6.6.0
+[    2.589351] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.600883] fuse init (API version 7.23)
+[    2.605610] Key type big_key registered
+[    2.607092] Allocating IMA MOK and blacklist keyrings.
+[    2.619950] Key type asymmetric registered
+[    2.621515] Asymmetric key parser 'x509' registered
+[    2.623725] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 249)
+[    2.626467] io scheduler noop registered
+[    2.627743] io scheduler deadline registered (default)
+[    2.631019] io scheduler cfq registered
+[    2.635099] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    2.636622] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+[    2.642031] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    2.644436] ACPI: Power Button [PWRF]
+[    2.649854] GHES: HEST is not enabled!
+[    2.905066] ACPI: PCI Interrupt Link [LNKC] enabled at IRQ 10
+[    3.379622] ACPI: PCI Interrupt Link [LNKA] enabled at IRQ 10
+[    3.387388] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    3.412855] 00:04: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    3.439553] Linux agpgart interface v0.103
+[    3.541477] tsc: Refined TSC clocksource calibration: 2394.482 MHz
+[    3.553682] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x2283daefa0c, max_idle_ns: 440795298922 ns
+[    3.559816] brd: module loaded
+[    3.579657] loop: module loaded
+[    3.611961] GPT:Primary header thinks Alt. header is not at the end of the disk.
+[    3.612805] GPT:90111 != 2097151
+[    3.613210] GPT:Alternate GPT header not at the end of the disk.
+[    3.614435] GPT:90111 != 2097151
+[    3.615033] GPT: Use GNU Parted to correct GPT errors.
+[    3.616780]  vda: vda1 vda15
+[    3.638570] scsi host0: ata_piix
+[    3.641570] scsi host1: ata_piix
+[    3.643152] ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc0c0 irq 14
+[    3.644749] ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc0c8 irq 15
+[    3.653421] libphy: Fixed MDIO Bus: probed
+[    3.654427] tun: Universal TUN/TAP device driver, 1.6
+[    3.655525] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    3.672332] PPP generic driver version 2.4.2
+[    3.675205] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.676272] ehci-pci: EHCI PCI platform driver
+[    3.676941] ehci-platform: EHCI generic platform driver
+[    3.677664] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    3.678886] ohci-pci: OHCI PCI platform driver
+[    3.679696] ohci-platform: OHCI generic platform driver
+[    3.680596] uhci_hcd: USB Universal Host Controller Interface driver
+[    3.946881] uhci_hcd 0000:00:01.2: UHCI Host Controller
+[    3.947993] uhci_hcd 0000:00:01.2: new USB bus registered, assigned bus number 1
+[    3.949844] uhci_hcd 0000:00:01.2: detected 2 ports
+[    3.951188] uhci_hcd 0000:00:01.2: irq 11, io base 0x0000c080
+[    3.957540] usb usb1: New USB device found, idVendor=1d6b, idProduct=0001
+[    3.958448] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.959559] usb usb1: Product: UHCI Host Controller
+[    3.960339] usb usb1: Manufacturer: Linux 4.4.0-28-generic uhci_hcd
+[    3.961120] usb usb1: SerialNumber: 0000:00:01.2
+[    3.966069] hub 1-0:1.0: USB hub found
+[    3.967381] hub 1-0:1.0: 2 ports detected
+[    3.975039] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    3.979383] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    3.980418] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    3.983644] mousedev: PS/2 mouse device common for all mice
+[    3.995055] rtc_cmos 00:00: RTC can wake from S4
+[    3.998842] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[    4.005078] rtc_cmos 00:00: rtc core: registered rtc_cmos as rtc0
+[    4.007321] rtc_cmos 00:00: alarms up to one day, y3k, 114 bytes nvram, hpet irqs
+[    4.010846] i2c /dev entries driver
+[    4.013431] device-mapper: uevent: version 1.0.3
+[    4.016031] device-mapper: ioctl: 4.34.0-ioctl (2015-10-28) initialised: dm-devel@redhat.com
+[    4.018398] ledtrig-cpu: registered to indicate activity on CPUs
+[    4.030516] NET: Registered protocol family 10
+[    4.049891] NET: Registered protocol family 17
+[    4.051757] Key type dns_resolver registered
+[    4.055374] microcode: AMD CPU family 0x6 not supported
+[    4.059880] registered taskstats version 1
+[    4.060818] Loading compiled-in X.509 certificates
+[    4.074188] Loaded X.509 cert 'Build time autogenerated kernel key: 6ea974e07bd0b30541f4d838a3b7a8a80d5ca9af'
+[    4.080291] zswap: loaded using pool lzo/zbud
+[    4.277701] Key type trusted registered
+[    4.392006] Key type encrypted registered
+[    4.393283] AppArmor: AppArmor sha1 policy hashing enabled
+[    4.394495] ima: No TPM chip found, activating TPM-bypass!
+[    4.399338] evm: HMAC attrs: 0x1
+[    4.411411]   Magic number: 3:191:880
+[    4.414443] rtc_cmos 00:00: setting system clock to 2019-09-25 09:52:25 UTC (1569405145)
+[    4.422972] BIOS EDD facility v0.16 2004-Jun-25, 0 devices found
+[    4.423959] EDD information not available.
+[    4.446207] Freeing unused kernel memory: 1480K (ffffffff81f42000 - ffffffff820b4000)
+[    4.447174] Write protecting the kernel read-only data: 14336k
+[    4.455453] Freeing unused kernel memory: 1860K (ffff88000182f000 - ffff880001a00000)
+[    4.461008] Freeing unused kernel memory: 168K (ffff880001dd6000 - ffff880001e00000)
+[    4.621671] clocksource: Switched to clocksource tsc
+
+info: initramfs: up at 4.83
+modprobe: module virtio_pci not found in modules.dep
+modprobe: module virtio_blk not found in modules.dep
+modprobe: module virtio_net not found in modules.dep
+modprobe: module vfat not found in modules.dep
+modprobe: module nls_cp437 not found in modules.dep
+info: copying initramfs to /dev/vda1
+info: initramfs loading root from /dev/vda1
+info: /etc/init.d/rc.sysinit: up at 9.52
+info: container: none
+Starting logging: OK
+modprobe: module virtio_pci not found in modules.dep
+modprobe: module virtio_blk not found in modules.dep
+modprobe: module virtio_net not found in modules.dep
+modprobe: module vfat not found in modules.dep
+modprobe: module nls_cp437 not found in modules.dep
+WARN: /etc/rc3.d/S10-load-modules failed
+Initializing random number generator... [   12.583756] random: dd urandom read with 15 bits of entropy available
+done.
+Starting acpid: OK
+Starting network...
+udhcpc (v1.23.2) started
+Sending discover...
+Sending discover...
+Sending discover...
+Usage: /sbin/cirros-dhcpc <up|down>
+No lease, failing
+WARN: /etc/rc3.d/S40-network failed
+checking http://169.254.169.254/2009-04-04/instance-id
+failed 1/20: up 198.89. request failed
+failed 2/20: up 201.37. request failed
+failed 3/20: up 203.84. request failed
+failed 4/20: up 206.24. request failed
+failed 5/20: up 208.61. request failed
+failed 6/20: up 211.14. request failed
+failed 7/20: up 213.56. request failed
+failed 8/20: up 215.97. request failed
+failed 9/20: up 218.34. request failed
+failed 10/20: up 220.77. request failed
+failed 11/20: up 223.20. request failed
+failed 12/20: up 225.57. request failed
+failed 13/20: up 227.95. request failed
+failed 14/20: up 230.40. request failed
+failed 15/20: up 232.84. request failed
+failed 16/20: up 235.26. request failed
+failed 17/20: up 237.63. request failed
+failed 18/20: up 240.11. request failed
+failed 19/20: up 242.58. request failed
+failed 20/20: up 245.06. request failed
+failed to read iid from metadata. tried 20
+failed to get instance-id of datasource
+Top of dropbear init script
+Starting dropbear sshd: failed to get instance-id of datasource
+OK
+GROWROOT: CHANGED: partition=1 start=18432 old: size=71647 end=90079 new: size=2078687,end=2097119
+/dev/root resized successfully [took 0.96s]
+=== system information ===
+Platform: OpenStack Foundation OpenStack Nova
+Container: none
+Arch: x86_64
+CPU(s): 1 @ 2394.485 MHz
+Cores/Sockets/Threads: 1/1/1
+Virt-type: AMD-V
+RAM Size: 46MB
+Disks:
+NAME  MAJ:MIN       SIZE LABEL         MOUNTPOINT
+vda   253:0   1073741824               
+vda1  253:1   1064287744 cirros-rootfs /
+vda15 253:15     8388608               
+=== sshd host keys ===
+-----BEGIN SSH HOST KEY KEYS-----
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0gjFn/FxZRt3HLe5Bak8Buk0yQyXvyB9Eb1O76e6jXt/HwL6ARKn21QgdqfgTwUZlSBcuWZ1Gx19r1rNHJwBliVYpC5BUy42bG73vjOM6BWQIRZ5QYbQexE8wbE25DxHsW549DU34kPMLLUvhDWtBxuEYtxEloyI+04lR4ZQhbPYK8TTJXjE8vPXr6nlXojnq+IPtSyiyrBNA9KbIpT3dRElzy3tr/nFPalceA9UmYFC6OyrDLPvq4rzdG5lvx43Rt8dEj+vLv0ZWIv5895WUrXSDqenfZwiiClnCVq/JiOpA9AT8a1DdRdTU3JTsbbuL64SuJJMbQ4BYVH4VQKsP root@cirros
+ssh-dss AAAAB3NzaC1kc3MAAACBAPIkM1bdhgxrg+NCW9A+0eN4zp+7OpQhW22VLm7DfSKcnLxXY5Ny8/D6WHcWB8FpQdXkDUgLPrp42Shv3mjfIpv4PQGyficPhBJ4iNZ64yGrHJdy+OE4tWGFOVxxxEMuVxc+PIfpa9gH/Cs+7UxoUbC6M4uPT6s+tjRidTruCU0ZAAAAFQCXytudn3Nwub84Xi28O9npH8/kIwAAAIAtB8mKU9cPkgtyC5ornaGU9x9LBQhvKbAUhgFwmPvDKVFbhpYIIAuoW6Ph6wFAVfxAiPjAoyQz+/UFIY9QbuM3XC5mclKt8HYm93t1pgqc+TjwxcOanzR+2C0ZQEJQA8fAPHS0+myPY8agkujq2XckuXiKnR/xOmmbLwZ7kwqISgAAAIEA4BWv0j5uJDkrgEzcsG6f2OnI25N4OEP6BylOuHCiqivbtOL/OOywCNY935LCHoQivlhIgJt/yd4yQC7ZXaFGTFcm6j8as0P1TstieJVdzZg4VXs8/B/b8Peio/z4z6hhqD1Pxp+0NQ/j/JNhkmQgKuCmpDPd51q66/9l+oej+/o= root@cirros
+-----END SSH HOST KEY KEYS-----
+=== network info ===
+if-info: lo,up,127.0.0.1,8,,
+if-info: eth0,up,,8,fe80::f816:3eff:fe7b:c6e2/64,
+ip-route6:fe80::/64 dev eth0  metric 256 
+ip-route6:unreachable default dev lo  metric -1  error -101
+ip-route6:ff00::/8 dev eth0  metric 256 
+ip-route6:unreachable default dev lo  metric -1  error -101
+=== datasource: None None ===
+=== cirros: current=0.4.0 uptime=260.10 ===
+=== pinging gateway failed, debugging connection ===
+############ debug start ##############
+### /etc/init.d/sshd start
+Top of dropbear init script
+Starting dropbear sshd: failed to get instance-id of datasource
+FAIL
+### ifconfig -a
+eth0      Link encap:Ethernet  HWaddr FA:16:3E:7B:C6:E2  
+          inet6 addr: fe80::f816:3eff:fe7b:c6e2/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:73 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:10 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:5594 (5.4 KiB)  TX bytes:1332 (1.3 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:12 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:12 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:1020 (1020.0 B)  TX bytes:1020 (1020.0 B)
+
+### route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+### cat /etc/resolv.conf
+cat: can't open '/etc/resolv.conf': No such file or directory
+### gateway not found
+/sbin/cirros-status: line 1: can't open /etc/resolv.conf: no such file
+### pinging nameservers
+### uname -a
+Linux cirros 4.4.0-28-generic #47-Ubuntu SMP Fri Jun 24 10:09:13 UTC 2016 x86_64 GNU/Linux
+### lsmod
+Module                  Size  Used by    Not tainted
+nls_iso8859_1          16384  0 
+isofs                  40960  0 
+ip_tables              24576  0 
+x_tables               36864  1 ip_tables
+pcnet32                45056  0 
+8139cp                 28672  0 
+mii                    16384  2 pcnet32,8139cp
+ne2k_pci               16384  0 
+8390                   20480  1 ne2k_pci
+e1000                 135168  0 
+virtio_scsi            20480  0 
+### dmesg | tail
+[    5.858699] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    6.803134] EXT4-fs (vda1): mounting ext3 file system using the ext4 subsystem
+[    6.841288] EXT4-fs (vda1): mounted filesystem with ordered data mode. Opts: (null)
+[    7.149320] EXT4-fs (vda1): mounting ext3 file system using the ext4 subsystem
+[    7.204045] EXT4-fs (vda1): mounted filesystem with ordered data mode. Opts: (null)
+[    8.897119] EXT4-fs (vda1): re-mounted. Opts: data=ordered
+[    9.677778] EXT4-fs (vda1): re-mounted. Opts: data=ordered
+[   12.583756] random: dd urandom read with 15 bits of entropy available
+[  257.369504] EXT4-fs (vda1): resizing filesystem from 32768 to 1039340 blocks
+[  257.842858] EXT4-fs (vda1): resized filesystem to 1039340
+### tail -n 25 /var/log/messages
+Sep 25 10:52:32 cirros kern.info kernel: [    4.411411]   Magic number: 3:191:880
+Sep 25 10:52:32 cirros kern.info kernel: [    4.414443] rtc_cmos 00:00: setting system clock to 2019-09-25 09:52:25 UTC (1569405145)
+Sep 25 10:52:32 cirros kern.info kernel: [    4.422972] BIOS EDD facility v0.16 2004-Jun-25, 0 devices found
+Sep 25 10:52:32 cirros kern.info kernel: [    4.423959] EDD information not available.
+Sep 25 10:52:32 cirros kern.debug kernel: [    4.425954] PM: Hibernation image not present or could not be loaded.
+Sep 25 10:52:32 cirros kern.info kernel: [    4.446207] Freeing unused kernel memory: 1480K (ffffffff81f42000 - ffffffff820b4000)
+Sep 25 10:52:32 cirros kern.info kernel: [    4.447174] Write protecting the kernel read-only data: 14336k
+Sep 25 10:52:32 cirros kern.info kernel: [    4.455453] Freeing unused kernel memory: 1860K (ffff88000182f000 - ffff880001a00000)
+Sep 25 10:52:32 cirros kern.info kernel: [    4.461008] Freeing unused kernel memory: 168K (ffff880001dd6000 - ffff880001e00000)
+Sep 25 10:52:32 cirros kern.info kernel: [    4.621671] clocksource: Switched to clocksource tsc
+Sep 25 10:52:32 cirros kern.info kernel: [    5.562418] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+Sep 25 10:52:32 cirros kern.info kernel: [    5.563277] e1000: Copyright (c) 1999-2006 Intel Corporation.
+Sep 25 10:52:32 cirros kern.info kernel: [    5.623697] ne2k-pci.c:v1.03 9/22/2003 D. Becker/P. Gortmaker
+Sep 25 10:52:32 cirros kern.info kernel: [    5.734275] pcnet32: pcnet32.c:v1.35 21.Apr.2008 tsbogend@alpha.franken.de
+Sep 25 10:52:32 cirros kern.info kernel: [    5.858699] ip_tables: (C) 2000-2006 Netfilter Core Team
+Sep 25 10:52:32 cirros kern.info kernel: [    6.803134] EXT4-fs (vda1): mounting ext3 file system using the ext4 subsystem
+Sep 25 10:52:32 cirros kern.info kernel: [    6.841288] EXT4-fs (vda1): mounted filesystem with ordered data mode. Opts: (null)
+Sep 25 10:52:32 cirros kern.info kernel: [    7.149320] EXT4-fs (vda1): mounting ext3 file system using the ext4 subsystem
+Sep 25 10:52:32 cirros kern.info kernel: [    7.204045] EXT4-fs (vda1): mounted filesystem with ordered data mode. Opts: (null)
+Sep 25 10:52:32 cirros kern.info kernel: [    8.897119] EXT4-fs (vda1): re-mounted. Opts: data=ordered
+Sep 25 10:52:32 cirros kern.info kernel: [    9.677778] EXT4-fs (vda1): re-mounted. Opts: data=ordered
+Sep 25 10:52:33 cirros kern.notice kernel: [   12.583756] random: dd urandom read with 15 bits of entropy available
+Sep 25 10:56:34 cirros authpriv.info dropbear[355]: Running in background
+Sep 25 10:56:38 cirros kern.info kernel: [  257.369504] EXT4-fs (vda1): resizing filesystem from 32768 to 1039340 blocks
+Sep 25 10:56:38 cirros kern.info kernel: [  257.842858] EXT4-fs (vda1): resized filesystem to 1039340
+############ debug end   ##############
+  ____               ____  ____
+ / __/ __ ____ ____ / __ \/ __/
+/ /__ / // __// __// /_/ /\ \ 
+\___//_//_/  /_/   \____/___/ 
+   http://cirros-cloud.net
+
+
+login as 'cirros' user. default password: 'gocubsgo'. use 'sudo' for root.
+cirros login: [  293.433246] random: nonblocking pool is initialized
+
+2019-09-25 10:06:06,167 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:_run_cleanups): 204 DELETE https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.225s
+2019-09-25 10:06:06,167 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 10:06:05 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-2974d1f9-ff0a-432f-bd1b-9935b60b90b3', 'x-compute-request-id': 'req-2974d1f9-ff0a-432f-bd1b-9935b60b90b3', 'connection': 'close', 'status': '204', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b''
+2019-09-25 10:06:06,513 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:_run_cleanups): 200 GET https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.345s
+2019-09-25 10:06:06,513 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 10:06:06 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '1620', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-b58d003f-c7ca-45eb-9a4a-3aa9827ff680', 'x-compute-request-id': 'req-b58d003f-c7ca-45eb-9a4a-3aa9827ff680', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b'{"server": {"id": "f6e4282a-9d32-486a-9f83-e2fa64d1475e", "name": "luke", "status": "ACTIVE", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "user_id": "b20cd6fb248648d1bc864fb244325c63", "metadata": {}, "hostId": "af3a5dc31e6b0d84683a52baf75458ba413c3926c7dd1435334b47d7", "image": {"id": "afd1a604-d791-4c0a-8c1e-6c5b3c99f68c", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/images/afd1a604-d791-4c0a-8c1e-6c5b3c99f68c"}]}, "flavor": {"id": "42", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/flavors/42"}]}, "created": "2019-09-25T09:52:11Z", "updated": "2019-09-25T10:06:06Z", "addresses": {"tempest-test-network--1029897089": [{"version": 4, "addr": "10.1.0.11", "OS-EXT-IPS:type": "fixed", "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:7b:c6:e2"}, {"version": 4, "addr": "172.24.5.80", "OS-EXT-IPS:type": "floating", "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:7b:c6:e2"}]}, "accessIPv4": "", "accessIPv6": "", "links": [{"rel": "self", "href": "https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}, {"rel": "bookmark", "href": "https://158.69.68.206/compute/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}], "OS-DCF:diskConfig": "MANUAL", "progress": 0, "OS-EXT-AZ:availability_zone": "nova", "config_drive": "", "key_name": "tempest-keypair-test-1014581709", "OS-SRV-USG:launched_at": "2019-09-25T09:52:19.000000", "OS-SRV-USG:terminated_at": null, "security_groups": [{"name": "tempest-secgroup-723781141"}], "OS-EXT-STS:task_state": "deleting", "OS-EXT-STS:vm_state": "active", "OS-EXT-STS:power_state": 1, "os-extended-volumes:volumes_attached": []}}'
+2019-09-25 10:06:07,875 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:_run_cleanups): 200 GET https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.352s
+2019-09-25 10:06:07,876 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 10:06:07 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'content-length': '1620', 'content-type': 'application/json', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'x-openstack-request-id': 'req-60c99b7c-4808-4ba3-b4e8-b273619f05e1', 'x-compute-request-id': 'req-60c99b7c-4808-4ba3-b4e8-b273619f05e1', 'connection': 'close', 'status': '200', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b'{"server": {"id": "f6e4282a-9d32-486a-9f83-e2fa64d1475e", "name": "luke", "status": "ACTIVE", "tenant_id": "2cc971d134234c498cca5b39d50c1c12", "user_id": "b20cd6fb248648d1bc864fb244325c63", "metadata": {}, "hostId": "af3a5dc31e6b0d84683a52baf75458ba413c3926c7dd1435334b47d7", "image": {"id": "afd1a604-d791-4c0a-8c1e-6c5b3c99f68c", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/images/afd1a604-d791-4c0a-8c1e-6c5b3c99f68c"}]}, "flavor": {"id": "42", "links": [{"rel": "bookmark", "href": "https://158.69.68.206/compute/flavors/42"}]}, "created": "2019-09-25T09:52:11Z", "updated": "2019-09-25T10:06:07Z", "addresses": {"tempest-test-network--1029897089": [{"version": 4, "addr": "10.1.0.11", "OS-EXT-IPS:type": "fixed", "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:7b:c6:e2"}, {"version": 4, "addr": "172.24.5.80", "OS-EXT-IPS:type": "floating", "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:7b:c6:e2"}]}, "accessIPv4": "", "accessIPv6": "", "links": [{"rel": "self", "href": "https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}, {"rel": "bookmark", "href": "https://158.69.68.206/compute/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e"}], "OS-DCF:diskConfig": "MANUAL", "progress": 0, "OS-EXT-AZ:availability_zone": "nova", "config_drive": "", "key_name": "tempest-keypair-test-1014581709", "OS-SRV-USG:launched_at": "2019-09-25T09:52:19.000000", "OS-SRV-USG:terminated_at": null, "security_groups": [{"name": "tempest-secgroup-723781141"}], "OS-EXT-STS:task_state": "deleting", "OS-EXT-STS:vm_state": "active", "OS-EXT-STS:power_state": 1, "os-extended-volumes:volumes_attached": []}}'
+2019-09-25 10:06:08,996 9560 INFO     [tempest.lib.common.rest_client] Request (InternalDNSTest:_run_cleanups): 404 GET https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e 0.106s
+2019-09-25 10:06:08,997 9560 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Wed, 25 Sep 2019 10:06:08 GMT', 'server': 'Apache/2.4.29 (Ubuntu)', 'openstack-api-version': 'compute 2.1', 'x-openstack-nova-api-version': '2.1', 'vary': 'OpenStack-API-Version,X-OpenStack-Nova-API-Version', 'content-type': 'application/json; charset=UTF-8', 'content-length': '111', 'x-openstack-request-id': 'req-a609e3eb-2a94-4851-b7c7-524211c93e10', 'x-compute-request-id': 'req-a609e3eb-2a94-4851-b7c7-524211c93e10', 'connection': 'close', 'status': '404', 'content-location': 'https://158.69.68.206/compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e'}
+        Body: b'{"itemNotFound": {"code": 404, "message": "Instance f6e4282a-9d32-486a-9f83-e2fa64d1475e could not be found."}}'
+}}}
