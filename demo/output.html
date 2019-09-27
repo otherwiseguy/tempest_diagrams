@@ -11,52 +11,76 @@
 Client->Keystone: POST /identity/v3/auth/tokens
 Keystone->Client: 201
 Client->Neutron: POST /v2.0/networks
+Note right of Neutron: 1.169s
 Neutron->Client: 201
 Client->Neutron: POST /v2.0/subnets
+Note right of Neutron: 1.884s
 Neutron->Client: 201
 Client->Neutron: POST /v2.0/security-groups
+Note right of Neutron: 0.186s
 Neutron->Client: 201
 Client->Neutron: POST /v2.0/routers
+Note right of Neutron: 2.863s
 Neutron->Client: 201
 Client->Neutron: PUT /v2.0/routers/be05455c-1832-49ab-ba69-89b528ba9f0a/add_router_interface
+Note right of Neutron: 4.028s
 Neutron->Client: 200
 Client->Nova: POST /compute/v2.1/os-keypairs
+Note right of Nova: 0.182s
 Nova->Client: 200
 Client->Neutron: POST /v2.0/security-group-rules
+Note right of Neutron: 0.201s
 Neutron->Client: 201
 Client->Nova: POST /compute/v2.1/servers
+Note right of Nova: 2.303s
 Nova->Client: 202
 Client->Nova: GET /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e
+Note right of Nova: 0.161s
 Nova->Client: 200
 Client->Nova: GET /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e
+Note right of Nova: 0.190s
 Nova->Client: 200
 Client->Nova: GET /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e
+Note right of Nova: 0.155s
 Nova->Client: 200
 Client->Nova: GET /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e
+Note right of Nova: 0.338s
 Nova->Client: 200
 Client->Nova: GET /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e
+Note right of Nova: 0.294s
 Nova->Client: 200
 Client->Nova: GET /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e
+Note right of Nova: 0.943s
 Nova->Client: 200
 Client->Nova: GET /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e
+Note right of Nova: 0.336s
 Nova->Client: 200
 Client->Neutron: GET /v2.0/ports
+Note right of Neutron: 0.095s
 Neutron->Client: 200
 Client->Neutron: POST /v2.0/floatingips
+Note right of Neutron: 4.107s
 Neutron->Client: 201
 Client->Neutron: POST /v2.0/security-group-rules
+Note right of Neutron: 0.400s
 Neutron->Client: 201
 Client->Nova: GET /compute/v2.1/servers
+Note right of Nova: 0.568s
 Nova->Client: 200
 Client->Nova: POST /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e/action
+Note right of Nova: 0.191s
 Nova->Client: 200
 Client->Nova: DELETE /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e
+Note right of Nova: 0.225s
 Nova->Client: 204
 Client->Nova: GET /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e
+Note right of Nova: 0.345s
 Nova->Client: 200
 Client->Nova: GET /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e
+Note right of Nova: 0.352s
 Nova->Client: 200
 Client->Nova: GET /compute/v2.1/servers/f6e4282a-9d32-486a-9f83-e2fa64d1475e
+Note right of Nova: 0.106s
 Nova->Client: 404
 </div>
 <script>
