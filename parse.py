@@ -133,11 +133,24 @@ class TempestLogItem(object):
         return "Client->{host}: {method} {path}{note}\n{host}->Client: {status}".format(method=self.request.method, host=self.request.target, path=self.request.url.path, status=self.response.status, note=note)
 
 
+def stripped(f):
+    for line in f:
+        try:
+            yield ast.literal_eval(line.split('|')[2].strip()) + "\n"
+        except Exception:
+            pass
+
+
 def messages(f):
     message = ""
     offset = 0
     level = None
-    for line in f:
+    # XXX (twilson) This requires the first line of the file to contain the
+    # Captured pythonlogging string. It should really be expanded to detect
+    # nested logs in a more robust way, but I had logs I needed to read now...
+    nested = 'Captured pythonlogging' in f.readline()
+    f.seek(0)
+    for line in f if not nested else stripped(f):
         match = RE_LOGLINE_START.match(line)
         if match:
             if message:
