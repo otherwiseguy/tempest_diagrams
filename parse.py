@@ -61,7 +61,7 @@ class TempestRequest(object):
             return 'Cinder'
         elif self.url.path.startswith('/image') or self.url.port == 9292:
             return 'Glance'
-        elif self.url.port == 9876:
+        elif self.url.path.startswith('/load-balancer') or self.url.port == 9876:
             return 'Octavia'
 
         port = self.url.port or 443 if self.url.scheme == 'https' else 80
