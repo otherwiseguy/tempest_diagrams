@@ -51,7 +51,7 @@ class TempestRequest(object):
 
     @property
     def target(self):
-        if self.url.port == 9696:
+        if self.url.port == 9696 or self.url.path.startswith('/networking'):
             return 'Neutron'
         elif self.url.path.startswith('/compute') or self.url.port in {8773, 8774, 8775}:
             return 'Nova'
